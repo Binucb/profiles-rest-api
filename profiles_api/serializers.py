@@ -1,3 +1,4 @@
+
 from rest_framework import serializers
 from profiles_api import models
 
@@ -21,7 +22,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
         }
 
-    def create(seld,validated_data):
+    def create(self,validated_data):
         #create and return a new users
         user = models.UserProfile.objects.create_user(
             email = validated_data['email'],

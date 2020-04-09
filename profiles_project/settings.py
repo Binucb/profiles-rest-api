@@ -1,3 +1,4 @@
+TIME_ZONE = 'UTC'
 """
 Django settings for profiles_project project.
 
@@ -110,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

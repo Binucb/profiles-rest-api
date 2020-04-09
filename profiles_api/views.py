@@ -1,3 +1,4 @@
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -24,7 +25,6 @@ class HelloApiView(APIView):
                 'Gives ypu the most control over you application logic',
                 'Is mapped manually to URLs',
         ]
-
         return Response({'message':'Hello','an_apiview':an_apiview})
 
     def post(self,request):
@@ -51,8 +51,8 @@ class HelloApiView(APIView):
 
     def delete(self,request,pk=None):
         """Only update the field requested"""
-        return Response({'method':"This is a delete method"})
 
+        return Response({'method':"This is a delete method"})
 
 class HelloViewSet(viewsets.ViewSet):
     """Test API View Set"""
@@ -62,13 +62,13 @@ class HelloViewSet(viewsets.ViewSet):
         """Return a hello message"""
         a_viewset = [
             'User actions testing ViewSet',
-            'Testing the server issue',
             'provide more functionality with less code',
         ]
 
         return Response({'message':'Hello','a_viewset':a_viewset})
 
     def create(self,request):
+        'Testing the server issue',
         serializer = self.serializer_class(data = request.data)
 
         if serializer.is_valid():

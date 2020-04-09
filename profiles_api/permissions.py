@@ -14,7 +14,7 @@ class UpdateOwnStatus(permissions.BasePermission):
     #Allow users to update their own status_test
     def has_object_permission(self,request,view,obj):
         #check the user is trying to update their own status_text
-        if request.status in permissions.SAFE_METHODS:
+        if request.method in permissions.SAFE_METHODS:
             return True
 
         return obj.user_profile.id == request.user.id
